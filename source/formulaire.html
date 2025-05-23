@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire</title>
+  </head>
+  <body>
+    <form id="form">
+      <!-- fieldset: division de la template -->
+      <fieldset>
+        <legend>Groupe les input localisation</legend>
+        <div>
+          <label for="city">Ville :</label>
+          <input
+            type="text"
+            name="city"
+            value=""
+            id="city"
+            placeholder="veuillez écrire le nom d'une ville"
+          />
+          <p>
+            <!-- ouvre le p ---------------  -->
+            <label for="cp">Code Postal :</label>
+            <input
+              type="text"
+              name="cp"
+              value=""
+              placeholder="veuillez écrire le code postal"
+            />
+          </p>
+          <!-- ferme le /p ----------------  -->
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Groupe les input sous le même terme</legend>
+        <div>
+          <p>
+            <label for="">Ecrivez votre nom : </label>
+            <input
+              type="text"
+              name="mon_nom"
+              placeholder="j'inscris mon nom ici"
+            />
+          </p>
+        </div>
+
+        <p>
+          <label for="password">Mot de passe</label> Entrez votre mot de passe :
+          <input type="password" name="mon_mot_de_passe" />
+        </p>
+      </fieldset>
+
+      <hr />
+
+      <fieldset>
+        <legend for="">Comment vous sentez-vous ?</legend>
+        <label for="very_good">Bien Bien</label>
+        <input type="radio" name="how_do_you_feel" value="very_good" />
+        <label for="good">Bien</label>
+        <input type="radio" name="how_do_you_feel" value="good" />
+        <label for="bof">bof</label>
+        <input type="radio" name="how_do_you_feel" value="bof" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Genre:</legend>
+        <label for="male"
+          >Male
+          <input type="radio" name="sex" id="male" value="male" />
+        </label>
+        <label for="male"
+          >non binaire
+          <input type="radio" name="sex" id="non binaire" value="male" />
+        </label>
+        <label for="female"
+          >Female
+          <input type="radio" name="sex" id="female" value="female" />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        Votre style de musique ?
+        <input type="checkbox" name="music[]" value="pop" />Popular
+        <input type="checkbox" name="music[]" value="rock" />Rock 'n Roll
+        <input type="checkbox" name="music[]" value="rb" />Rythm &amp; Blues
+      </fieldset>
+      <fieldset>
+        <legend>
+          Quels sont vos pr&eacute;f&eacute;rences en mati&egrave;re de sandwich
+          ?
+        </legend>
+        <p>
+          <label for="poulet_curry">poulet curry</label>
+          <input type="checkbox" name="sandwich[]" value="poulet_curry" />
+        </p>
+        <p>
+          <label for="poulet_salade">Poulet Salade</label>
+          <input type="checkbox" name="sandwich[]" value="poulet_salade" />
+        </p>
+        <p>
+          <label for="thon_piquant">Thon piquant</label>
+          <input type="checkbox" name="sandwich[]" value="thon_piquant" />
+        </p>
+      </fieldset>
+      <!-- Horizontal rule: separation-->
+      <hr />
+      <div>
+        <label for="glaces"
+          >Choisissez la couleur de votre glace. Une de ces trois-là, et rien
+          d'autre.
+        </label>
+        <!-- 
+Select, menu de reroutage
+composé d'option, les option sont les choix du select.
+l'attribut selected permet de d'imposer un choix (option)
+ -->
+        <select name="glaces">
+          <option value=""></option>
+          <option value="vanilla">Vanilla</option>
+          <option value="choco">Chocolate</option>
+          <option value="straw">Strawberry</option>
+        </select>
+
+        <div>Notez l'option blanche en premier choix. Pourquoi ?</div>
+      </div>
+      <hr />
+      <!--
+<datalist id="browsers">
+  <option value="Internet Explorer"></option>
+  <option value="Firefox 2021"></option>
+  <option value="Firefox 2020"></option>
+  <option value="Firefox 2019"></option>
+  <option value="Firefox 2018"></option>
+  <option value="Chrome"></option>
+  <option value="Opera 2000"></option>
+  <option value="Opera 2020"></option>
+  <option value="Safari"></option>
+</datalist>
+<div>
+	<label for="browser">Choose your browser, or type your own text:</label>
+	<input list="browsers" name="browser" type="text">
+	<div>La "datalist" est fournie séparément. Elle n'est qu'une suggestion de valeur, et non un choix imposé.</div>
+</div>
+-->
+
+      <fieldset>
+        <label for="my_favorite_color">
+          Ma couleur favorite :
+          <input type="color" name="my_favorite_color" required />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <label for="my_favorite_number"
+          >Mon nombre fétiche (de 0 à 1000) : <br />
+          -10
+          <input
+            type="range"
+            name="my_favorite_number"
+            id="my_favorite_number"
+            value="0"
+            min="-10"
+            max="1000"
+          />
+          1000
+        </label>
+        <br />
+      </fieldset>
+
+      <p>
+        <a href="#form"> back to top ↑ </a>
+      </p>
+
+      <h2>Bouton soumettre</h2>
+      <input type="submit" value="submit" />
+      <hr />
+      <h3>Les Dates</h3>
+
+      <label for="start">
+        Start date:
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          value="1993-06-12"
+          min="1993-01-01"
+          max="2018-12-31"
+        />
+      </label>
+      <label for="start">
+        End:
+        <input
+          type="date"
+          id="end"
+          name="trip-end"
+          value="2018-07-22"
+          min="2018-01-01"
+          max="2018-12-31"
+        />
+      </label>
+
+      <h3>DATE TIME LOCAL</h3>
+      <!-- Agenda + horraire -->
+      <label for="meeting-time"
+        >Choose a time for your appointment:
+        <input
+          type="datetime-local"
+          id="meeting-time"
+          name="meeting-time"
+          value="2018-06-12T19:30"
+          min="2018-06-07T00:00"
+          max="2018-06-14T00:00"
+        />
+      </label>
+      <p>https://www.w3schools.com/tags/att_input_pattern.asp</p>
+      <h3>Telephone</h3>
+      <label for="phone">
+        Enter your phone number:<br />
+        <small>Format: 02-456-78-90</small>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+          required
+        />
+      </label>
+      <br />
+      <label for="message">
+        Message:
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Commentaire"
+        ></textarea>
+      </label>
+      <br />
+      <!--	submit btn -->
+      <label>Pour soumettre le form</label> <br />
+      <button type="submit">button type "submit"</button>
+      <input type="submit" name="submit" id="submit" />
+      <br />
+      <!-- le button est fait pour l'action, print, add to cart-->
+      <button type="button">button type "button"</button>
+      <br />
+      <input type="submit" value="ENVOYER" />
+      <label
+        >Rien ne se passe. Il manque le code de validation Javascript.</label
+      >
+      <br />
+    </form>
+    <hr />
+
+    <h2>Exemple de relation entre cible de lien (target) et iframe</h2>
+    <a href="https://maps.app.goo.gl/HVTKgtBLLswveU4P8" target="widget"
+      >ce lien</a
+    >
+    <a href="https://www.awwwards.com" target="widget">ce lien</a>
+    <a href="https://www.liberation.fr" target="widget">ce lien</a>
+    <hr />
+    <iframe
+      src="./form.html"
+      width="600"
+      height="250"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      name="widget"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </body>
+</html>
